@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "node",
+      "args": ["/path/to/TesterBud/dist/mcp-server.js"],
+      "env": {
+        "GEMINI_API_KEY": "YOUR_GEMINI_API_KEY_HERE"
+      }
+    }
+  }
+}

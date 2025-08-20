@@ -1,0 +1,1 @@
+{"version":3,"file":"provider-configs.js","sourceRoot":"","sources":["../../src/adapters/provider-configs.ts"],"names":[],"mappings":";;;AAAA,4CAA4C;AAC/B,QAAA,kBAAkB,GAAG;IAChC,MAAM,EAAE;QACN,SAAS,EAAE,YAAY,EAAE,0BAA0B;QACnD,gDAAgD;KACjD;IACD,sEAAsE;IACtE,YAAY;IACZ,gCAAgC;IAChC,oCAAoC;IACpC,KAAK;CACN,CAAC"}

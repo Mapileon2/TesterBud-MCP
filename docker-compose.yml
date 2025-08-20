@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  TesterBud:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - gemini-api # Assuming Gemini API is a separate service or needs to be mocked
+    # Add other services like databases or external APIs as needed
+    # For example, if you were using a local database:
+    # db:
+    #   image: postgres:13
+    #   environment:
+    #     POSTGRES_DB: context7db
+    #     POSTGRES_USER: user
+    #     POSTGRES_PASSWORD: password
+    #   volumes:
+    #     - postgres_data:/var/lib/postgresql/data
+
+# volumes:
+#   postgres_data:

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "TesterBud-universal": {
+      "command": "node",
+      "args": ["dist/mcp-server.js"],
+      "env": {
+        "GEMINI_API_KEY": "your_api_key_here",
+        "DEFAULT_LLM_PROVIDER": "gemini",
+        "DEFAULT_REASONING_MODE": "balanced_reasoning"
+      }
+    }
+  }
+}

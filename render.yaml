@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: TesterBud
+    env: node
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /health # Assuming you'll add a health check endpoint
+    envVars:
+      - key: GEMINI_API_KEY
+        fromValue: GEMINI_API_KEY # Assumes GEMINI_API_KEY is set in Render environment variables
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: TesterBud-disk
+      mountPath: /app/logs # Example mount path for logs
+    autoDeploy: false # Set to true for automatic deployments on push
