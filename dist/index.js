@@ -17,6 +17,15 @@ app.use('/mcp', mcpServer.router);
 app.get('/', (req, res) => {
     res.send('Context7 MCP Server is running!');
 });
+// Health check endpoint for FastMCP Cloud
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: 'healthy',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
+        service: 'TesterBud-MCP'
+    });
+});
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });

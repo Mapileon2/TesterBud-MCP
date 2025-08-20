@@ -1,0 +1,73 @@
+{
+  "name": "TesterBud-MCP",
+  "version": "1.0.0",
+  "description": "Advanced MCP server for code analysis, generation, debugging, and context management",
+  "mcp_version": "1.0.0",
+  "runtime": "node",
+  "entry_point": "dist/index.js",
+  "build_command": "npm run build",
+  "start_command": "npm start",
+  "environment": {
+    "NODE_ENV": "production",
+    "PORT": "3000"
+  },
+  "required_env_vars": [
+    "GEMINI_API_KEY"
+  ],
+  "optional_env_vars": [
+    "LOG_LEVEL",
+    "LLM_PROVIDER"
+  ],
+  "tools": [
+    {
+      "name": "analyze_code",
+      "description": "Analyze code for patterns, issues, and improvements",
+      "parameters": {
+        "code": "string",
+        "language": "string",
+        "analysis_type": "string"
+      }
+    },
+    {
+      "name": "generate_code",
+      "description": "Generate code based on requirements",
+      "parameters": {
+        "requirements": "string",
+        "language": "string",
+        "context": "string"
+      }
+    },
+    {
+      "name": "debug_code",
+      "description": "Debug code issues and provide fixes",
+      "parameters": {
+        "code": "string",
+        "error": "string",
+        "language": "string"
+      }
+    },
+    {
+      "name": "get_context",
+      "description": "Get relevant context for code analysis",
+      "parameters": {
+        "query": "string",
+        "language": "string",
+        "limit": "number"
+      }
+    }
+  ],
+  "health_check": {
+    "endpoint": "/health",
+    "method": "GET"
+  },
+  "scaling": {
+    "min_instances": 1,
+    "max_instances": 3,
+    "cpu_threshold": 70,
+    "memory_threshold": 80
+  },
+  "resources": {
+    "memory": "512Mi",
+    "cpu": "500m"
+  }
+}
